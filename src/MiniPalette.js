@@ -43,12 +43,12 @@ const styles = {
 };
 
 const MiniPalette = (props) => {
-    const { classes, paletteName, emoji, colors } = props;
+    const { classes, paletteName, emoji, colors, handleRedirect } = props;
     const miniBoxes = colors.map((c) => (
         <div className={classes.miniBox} style={{ backgroundColor: c.color }} key={c.name} />
     ));
     return (
-        <div className={classes.root}>
+        <div className={classes.root} onClick={handleRedirect}>
             <div className={classes.colors}>{miniBoxes}</div>
             <h5 className={classes.title}>
                 {paletteName}
