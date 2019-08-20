@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import './App.css';
+// import './App.css';
 import Palette from './Palette';
 import seedColors from './seedColors';
 import { generatePalette } from './colorHelpers';
@@ -23,6 +23,7 @@ class App extends Component {
                         <Palette palette={generatePalette(this.findPalette(routeProps.match.params.id))} />
                     )}
                 />
+                <Route exact path="/palette/:paletteId/:colorId" render={() => <h1>asdas</h1>} />
             </Switch>
 
             // <div className="App">
