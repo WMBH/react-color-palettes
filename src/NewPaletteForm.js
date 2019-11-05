@@ -26,7 +26,9 @@ const styles = (theme) => ({
 		flexShrink: 0
 	},
 	drawerPaper: {
-		width: drawerWidth
+		width: drawerWidth,
+		display: 'flex',
+		alighItems: 'center'
 	},
 	drawerHeader: {
 		display: 'flex',
@@ -52,6 +54,21 @@ const styles = (theme) => ({
 			duration: theme.transitions.duration.enteringScreen
 		}),
 		marginLeft: drawerWidth
+	},
+	container: {
+		width: '90%',
+		display: 'flex',
+		flexDirection: 'column',
+		justifyContent: 'center',
+		height: '100%',
+		margin: '0 auto',
+		textAlign: 'center'
+	},
+	buttons: {
+		width: '100%'
+	},
+	button: {
+		width: '50%'
 	}
 });
 
@@ -151,21 +168,29 @@ class NewPaletteForm extends Component {
 						</IconButton>
 					</div>
 					<Divider />
-					<Typography variant="h4">Design your palette</Typography>
-					<div>
-						<Button variant="contained" color="secondary" onClick={this.removeAllColors}>
-							Clear Palette
-						</Button>
-						<Button
-							variant="contained"
-							color="primary"
-							onClick={this.addRandomColor}
-							disabled={paletteIsFull}
-						>
-							Random Color
-						</Button>
+					<div className={classes.container}>
+						<Typography variant="h4">Design your palette</Typography>
+						<div className={classes.buttons}>
+							<Button
+								variant="contained"
+								color="secondary"
+								onClick={this.removeAllColors}
+								className={classes.button}
+							>
+								Clear Palette
+							</Button>
+							<Button
+								className={classes.button}
+								variant="contained"
+								color="primary"
+								onClick={this.addRandomColor}
+								disabled={paletteIsFull}
+							>
+								Random Color
+							</Button>
+						</div>
+						<ColorPickerForm paletteIsFull={paletteIsFull} addColor={this.addNewColor} colors={colors} />
 					</div>
-					<ColorPickerForm paletteIsFull={paletteIsFull} addColor={this.addNewColor} colors={colors} />
 				</Drawer>
 				<main
 					className={classNames(classes.content, {
