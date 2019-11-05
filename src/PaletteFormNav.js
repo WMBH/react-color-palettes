@@ -10,7 +10,6 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Button from '@material-ui/core/Button';
-import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
 
 const drawerWidth = 320;
 const styles = (theme) => ({
@@ -24,6 +23,7 @@ const styles = (theme) => ({
 		}),
 		flexDirection: 'row',
 		justifyContent: 'space-between',
+		alignItems: 'center',
 		height: '64px'
 	},
 	appBarShift: {
@@ -38,19 +38,32 @@ const styles = (theme) => ({
 		marginLeft: 12,
 		marginRight: 20
 	},
-	buttons: {}
+	buttons: {
+		marginRight: '1rem'
+	},
+	button: {
+		margin: '0 0.5rem'
+	},
+	link: {
+		textDecoration: 'none'
+	}
 });
 
 class PaletteFormNav extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			newPaletteName: ''
+			newPaletteName: '',
+			formShow: false
 		};
 	}
 
 	handleChange = (evt) => {
 		this.setState({ [evt.target.name]: evt.target.value });
+	};
+
+	showForm = () => {
+		this.setState({ formShow: true });
 	};
 
 	render() {
@@ -79,14 +92,17 @@ class PaletteFormNav extends Component {
 						</Typography>
 					</Toolbar>
 					<div className={classes.buttons}>
-						<PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />
-						<Link to="/">
-							<Button variant="contained" color="secondary">
+						<Link to="/" className={classes.link}>
+							<Button variant="contained" color="secondary" className={classes.button}>
 								Go back
 							</Button>
 						</Link>
+						<Button variant="outlined" color="primary" onClick={this.showForm} className={classes.button}>
+							Save
+						</Button>
 					</div>
 				</AppBar>
+				{this.state.formShow && <PaletteMetaForm palettes={palettes} handleSubmit={handleSubmit} />}
 			</div>
 		);
 	}
