@@ -8,7 +8,6 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import { Picker } from 'emoji-mart';
 import 'emoji-mart/css/emoji-mart.css';
-import { getThemeProps } from '@material-ui/styles';
 
 class PaletteMetaForm extends Component {
 	constructor(props) {
