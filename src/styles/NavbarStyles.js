@@ -1,3 +1,4 @@
+import sizes from './sizes';
 export default {
 	Navbar: {
 		display: 'flex',
@@ -18,6 +19,9 @@ export default {
 		'& a': {
 			textDecoration: 'none',
 			color: 'black'
+		},
+		[sizes.down('xs')]: {
+			display: 'none'
 		}
 	},
 
@@ -44,6 +48,9 @@ export default {
 			width: '13px',
 			height: '13px',
 			marginTop: '-3px'
+		},
+		[sizes.down('md')]: {
+			width: '150px'
 		}
 	}
 };

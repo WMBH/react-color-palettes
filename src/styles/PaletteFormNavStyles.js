@@ -1,4 +1,5 @@
-const drawerWidth = 320;
+import sizes from './sizes';
+const drawerWidth = 400;
 const styles = (theme) => ({
 	root: {
 		display: 'flex'
@@ -29,10 +30,17 @@ const styles = (theme) => ({
 		marginRight: 20
 	},
 	buttons: {
-		marginRight: '1rem'
+		marginRight: '1rem',
+		[sizes.down('xs')]: {
+			marginRight: '0.5rem'
+		}
 	},
 	button: {
-		margin: '0 0.5rem'
+		margin: '0 0.5rem',
+		[sizes.down('xs')]: {
+			margin: '0 0.2rem',
+			padding: '0.3rem'
+		}
 	},
 	link: {
 		textDecoration: 'none'
