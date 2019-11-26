@@ -56,7 +56,6 @@ class PaletteList extends Component {
 							<MiniPalette
 								{...p}
 								handleRedirect={() => this.redirectToPalette(p.id)}
-								// handleDelete={deletePalette}
 								openDialog={this.openDeleteDialog}
 								key={p.id}
 								id={p.id}
