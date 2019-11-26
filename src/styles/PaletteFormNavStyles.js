@@ -1,5 +1,5 @@
 import sizes from './sizes';
-const drawerWidth = 400;
+const drawerWidth = 320;
 const styles = (theme) => ({
 	root: {
 		display: 'flex'
@@ -15,7 +15,7 @@ const styles = (theme) => ({
 		flexDirection: 'row',
 		justifyContent: 'space-between',
 		alignItems: 'center',
-		height: '64px'
+		height: '10%'
 	},
 	appBarShift: {
 		width: `calc(100% - ${drawerWidth}px)`,

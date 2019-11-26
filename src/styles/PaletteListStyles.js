@@ -1,3 +1,5 @@
+import sizes from './sizes';
+import bg from './bg.svg';
 export default {
 	root: {
 		backgroundColor: 'blue',
@@ -5,14 +7,24 @@ export default {
 		display: 'flex',
 		alignItems: 'flex-start',
 		justifyContent: 'center',
-		overflow: 'scroll'
+		overflow: 'auto',
+		backgroundImage: `url(${bg})`
+	},
+	title: {
+		color: 'black'
 	},
 	container: {
 		width: '50%',
 		display: 'flex',
 		alignItems: 'flex-start',
 		flexDirection: 'column',
-		flexWrap: 'wrap'
+		flexWrap: 'wrap',
+		[sizes.down('lg')]: {
+			width: '80%'
+		},
+		[sizes.down('xs')]: {
+			width: '70%'
+		}
 	},
 	nav: {
 		display: 'flex',
@@ -21,7 +33,7 @@ export default {
 		color: 'white',
 		alignItems: 'center',
 		'& a': {
-			color: 'white'
+			color: 'black'
 		}
 	},
 	palettes: {
@@ -29,6 +41,13 @@ export default {
 		width: '100%',
 		display: 'grid',
 		gridTemplateColumns: 'repeat(3,30%)',
-		gridGap: '5%'
+		gridGap: '2.5rem',
+		[sizes.down('md')]: {
+			gridTemplateColumns: 'repeat(2,50%)'
+		},
+		[sizes.down('xs')]: {
+			gridTemplateColumns: 'repeat(1,100%)',
+			gridGap: '1rem'
+		}
 	}
 };

@@ -4,10 +4,6 @@ import styles from './styles/MiniPaletteStyles';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 class MiniPalette extends Component {
-	constructor(props) {
-		super(props);
-	}
-
 	deletePalette = (evt) => {
 		evt.stopPropagation();
 		this.props.handleDelete(this.props.id);
