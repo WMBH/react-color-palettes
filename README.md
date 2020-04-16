@@ -6,8 +6,11 @@ A React app for creating and managing color palettes.
 
 Features:
 
+- You can create, save ,edit and delete color palletes.
+
 - Drag and drop on "Create palette" screen.
 
 - Adaptive text color that changes depending on hue of the pallete.
 
 - You can copy hex, rgb or rgba code of any color you choose.
+
